@@ -1,0 +1,62 @@
+	<html>
+	<head>
+	<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+
+}
+.breadcrumbs {
+background: linear-gradient(45deg, Red, blue);
+padding: 10px;
+font-size: 20px;
+}
+.breadcrumbs a {
+color: #333;
+box-shadow: inset 0 0 0 0 midnightblue;
+margin: 0 -.25rem;
+  padding: 0 .25rem;
+ transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.breadcrumbs a:hover {
+color:white;
+box-shadow: inset 300px 0 0 0 midnightblue;
+}
+.breadcrumbs  {
+color: black;
+margin: 0 5px;
+}
+</style>
+</head>
+	<body>
+	  <div id="breadcrumbs"> </div>
+	  
+	  <script>
+	    function configureBredcrumbs() {
+	      // get the location
+	      let path = location.href.split('/').slice(3);
+	      // create an array of objects to store links and anchor text
+	      const linkPaths = [{ "main": 'ERP BloodBank', "link": '/' }];
+	      // iterate through the path array
+	      for (let i = 0; i < path.length; i++) {
+	        const component = path[i];
+	        // convert URL to the text
+	        const anchorText = decodeURIComponent(component).split('.')[0];
+	        // create a link
+	        const link = '/' + path.slice(0, i + 1).join('/');
+	        // push to array
+	        linkPaths.push({ "main": anchorText, "link": link });
+	      }
+	      // add links in the span
+	      let values = linkPaths.map((part) => {
+	        return "<a href="+ "part.link" + ">" + part.main + "</a>"
+	      }).join('<span style="margin: 5px">/</span>')
+	
+	      let element = document.getElementById("breadcrumbs");
+	      element.innerHTML = values;
+	    }
+	    configureBredcrumbs();
+	  </script>
+	</body>
+	</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML >
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %> 
+<%@page import="Project.ConnectionProvider" %>
+<%@page import="java.sql.*" %>
+<html>
+<head>
+<style>
+#hyderabadbloodbank {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+}
+
+#hyderabadbloodbank td, #hyderabadbloodbank th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#hyderabadbloodbank tr:nth-child(even){background-color: #f2f2f2;}
+
+#hyderabadbloodbank tr:hover {background-color: #ddd;}
+
+#hyderabadbloodbank th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</style>
+</head>
+<body>
+<center>
+<br> <br><button onclick="window.print()">PrintNow</button>
+<br><br>
+<table id="hyderabadbloodbank">
+<tr>
+<th>Name</th>
+<th>Phone Number</th>
+<th>Website</th>
+<th>Email</th>
+</tr>
+<tr>
+<%
+try{
+	Connection con = ConnectionProvider.getCon();
+	Statement st = con.createStatement();
+	ResultSet rs = st.executeQuery("select * from hyderabadbloodbank");
+	while(rs.next())
+	{
+%>
+<td><%=rs.getString(1) %></td>
+<td><%=rs.getString(2) %></td>
+<td><%=rs.getString(3) %></td>
+<td><%=rs.getString(4) %></td>
+</tr>
+<% 
+	}
+	}
+catch(Exception e)
+{
+	System.out.print(e);
+}
+%>
+</table>
+</table>
+</center>
+
+
+</body>
+</html>

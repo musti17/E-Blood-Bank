@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+ <link href="css/bootstrap.css" rel="stylesheet" type="text/css">  
+
+<style>
+
+
+
+li a:hover:not(.active) {
+  background-color: red;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white navbar-red">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.jsp"><font color="red" size=5><strong><span class="emphasized">E-BLOOD BANK</span></span></strong> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+  <li><a class="nav-link" href="home.jsp">Home</a></li>
+  <li><a class="nav-link" href="addNewDonor.jsp">Add New Donor</a></li>
+  <li><a class="nav-link" href="editDeleteList.jsp">Edit/Delete List of Donor</a></li>
+  <li><a class="nav-link" href="addNewBloodbank.jsp">Add Blood Bank</a></li> 
+  <li><a class="nav-link" href="editDeleteBloodbank.jsp">Edit/Delete Blood Bank</a></li>  
+  <li><a class="nav-link" href="addNewHospital.jsp">Add New Hospital</a></li>  
+   <li><a class="nav-link" href="editDeleteHospital.jsp">Edit/Delete Hospital</a></li>  
+  <li><a class="nav-link" href="manageStock.jsp">Manage Stock</a></li>  
+  <li><a class="nav-link" href="requestForBlood.jsp">Request for Blood</a></li>
+  <li><a class="nav-link" href="requestCompleted.jsp">Request Completed</a></li>
+  <li style="float:right"><a class="nav-link"  href="index.jsp">Logout</a></li>
+   </ul>
+    </div>
+  </div>
+</nav>
+</body>
+
+</html>
